@@ -1,12 +1,13 @@
 #testing import
-from person import Person
+from models import person
 
 class Meeting:
-    def __init__(self, meeting_id, date, start_time, end_time, participants=None):
+    def __init__(self, meeting_id, date, start_time, end_time, oraganizer=None, participants=None):
         self.meeting_id = meeting_id
         self.date = date  # Expected format "YYYY-MM-DD"
         self.start_time = start_time  # Expected format "HH:MM"
         self.end_time = end_time  # Expected format "HH:MM"
+        self.organizer = oraganizer if oraganizer else None
         self.participants = participants if participants else []
 
     def add_participant(self, person):
@@ -19,6 +20,18 @@ class Meeting:
         if person in self.participants:
             self.participants.remove(person)
 
+    def set_organizer(self, organizer):
+        self.organizer = organizer
+
+    def get_organizer(self):
+        return self.organizer
+
+    def get_tuple_representation_for_meeting(self):
+        return (self.meeting_id, self.date, self.start_time, self.end_time)
+    
+    def get_participants(self):
+        return self.participants
+
     def __str__(self):
         """Return a string representation of the meeting."""
         participants_names = ', '.join([p.full_name() for p in self.participants])
@@ -28,8 +41,8 @@ class Meeting:
 # Example usage
 if __name__ == "__main__":
     # Assuming a Person class exists and has a method full_name()
-    john = Person("John", "Doe", 1)
-    jane = Person("Jane", "Doe", 2)
+    john = person.Person("John", "Doe", 1)
+    jane = person.Person("Jane", "Doe", 2)
     
     meeting = Meeting(meeting_id=1, date="2024-04-08", start_time="09:00", end_time="10:00")
     meeting.add_participant(john)

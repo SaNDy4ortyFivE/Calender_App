@@ -1,6 +1,8 @@
 import sqlite3
 from sqlite3 import Error
 
+from services.helpers import utilities
+
 class SQLiteDBConnection:
     _instance = None
 
