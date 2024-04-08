@@ -34,31 +34,30 @@ def create_database():
         #     )
         # ''')
 
-        # cursor.execute('''
-        #     CREATE TABLE MeetingRoom (
-        #         id INTEGER PRIMARY KEY,
-        #         room_name TEXT NOT NULL,
-        #         room_number TEXT NOT NULL
-        #     )
-        # ''')
-
         cursor.execute('''
-            CREATE TABLE MeetingMember (
-                meeting_id INTEGER,
-                person_id INTEGER,
-                FOREIGN KEY(meeting_id) REFERENCES Meeting(id),
-                FOREIGN KEY(person_id) REFERENCES Person(id)
+            CREATE TABLE MeetingRoom (
+                id INTEGER PRIMARY KEY,
+                room_name TEXT NOT NULL,
+                room_number TEXT NOT NULL
             )
         ''')
 
         # cursor.execute('''
-        #     CREATE TABLE MeetingDetails (
-        #         id INTEGER PRIMARY KEY,
-        #         meeting_type TEXT NOT NULL,
-        #         room_id INTEGER,
-        #         FOREIGN KEY(room_id) REFERENCES MeetingRoom(id)
+        #     CREATE TABLE MeetingMember (
+        #         meeting_id INTEGER,
+        #         person_id INTEGER,
+        #         FOREIGN KEY(meeting_id) REFERENCES Meeting(id),
+        #         FOREIGN KEY(person_id) REFERENCES Person(id)
         #     )
         # ''')
+
+        cursor.execute('''
+            CREATE TABLE MeetingDetails (
+                id INTEGER PRIMARY KEY,
+                room_id INTEGER,
+                FOREIGN KEY(room_id) REFERENCES MeetingRoom(id)
+            )
+        ''')
 
         conn.commit()
         conn.close()

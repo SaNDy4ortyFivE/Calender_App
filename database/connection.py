@@ -1,9 +1,11 @@
 import sqlite3
 from sqlite3 import Error
 
-from services.helpers import utilities
 
 class SQLiteDBConnection:
+    '''
+        Represent a SQLite DB Connection
+    '''
     _instance = None
 
     def __new__(cls, db_file):
