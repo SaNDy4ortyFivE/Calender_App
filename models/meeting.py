@@ -46,9 +46,9 @@ class SinglePersonMeeting(Meeting):
         organizer(Person): Organizer for this Meeting
     '''
 
-    def __init__(self, meeting_id: int, date: str, start_time: str, end_time: str, oraganizer:Person=None):
+    def __init__(self, meeting_id: int, date: str, start_time: str, end_time: str, oraganizer:Person):
         super().__init__(meeting_id, date, start_time, end_time)
-        self.organizer = oraganizer if oraganizer else None
+        self.organizer = oraganizer
 
     def set_organizer(self, organizer):
         '''Sets the organizer for this meeting'''
@@ -81,7 +81,7 @@ class MultiPersonMeeting(SinglePersonMeeting):
         participants(List of Persons): Participants for this meeting
     '''
 
-    def __init__(self, meeting_id: int, date: str, start_time: str, end_time: str, meeting_room: int, oraganizer:Person=None, participants: list=None):
+    def __init__(self, meeting_id: int, date: str, start_time: str, end_time: str, meeting_room: int, oraganizer:Person, participants: list=None):
         super().__init__(meeting_id, date, start_time, end_time, oraganizer)
         self.participants = participants if participants else []
         self.meeting_room = meeting_room

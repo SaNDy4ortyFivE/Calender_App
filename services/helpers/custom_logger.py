@@ -14,7 +14,7 @@ class CustomLogger(logging.Logger):
         self.addHandler(console_handler)
 
         # Create a file handler and set the formatter
-        file_handler = logging.FileHandler("logfile.log")
+        file_handler = logging.FileHandler("logs/logfile.log")
         file_handler.setLevel(logging.DEBUG)  # Set the level for file logs
         file_handler.setFormatter(formatter)
         self.addHandler(file_handler)

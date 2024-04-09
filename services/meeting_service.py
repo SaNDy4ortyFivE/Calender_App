@@ -37,15 +37,11 @@ def handle_new_single_meeting(person_id: int, date: str, from_time: str, to_time
             custom_logger.logger.Error("Could not schedule meeting, as no meeting id was generated.")
             return
 
-        #Create new instance of single meeting
-        meeting_instance = meeting.SinglePersonMeeting(meeting_id, date, from_time, to_time)
-
         custom_logger.logger.debug(f'Creating new person with id={person_id}')
         person_instance = person.Person(person_id)
         custom_logger.logger.debug(f'New person with id={person_id} created')
-
-        custom_logger.logger.debug("Setting this person as organizer...")
-        meeting_instance.set_organizer(person_instance)
+        #Create new instance of single meeting
+        meeting_instance = meeting.SinglePersonMeeting(meeting_id, date, from_time, to_time, person_instance)
 
         if not insert_meeting(meeting_instance):
             custom_logger.logger.debug("Meeting not scheduled")
@@ -96,15 +92,12 @@ def handle_new_multiple_meeting(person_id, date, from_time, to_time, participant
             custom_logger.logger.Error("Could not schedule meeting, as no meeting id was generated.")
             return
 
-        #Create new instance of multi meeting
-        meeting_instance = meeting.MultiPersonMeeting(meeting_id, date, from_time, to_time, meeting_room)
-
         custom_logger.logger.debug(f'Creating new person with id={person_id}')
         person_instance = person.Person(person_id)
         custom_logger.logger.debug(f'New person with id={person_id} created')
 
-        custom_logger.logger.debug("Setting this person as organizer...")
-        meeting_instance.set_organizer(person_instance)
+        #Create new instance of multi meeting
+        meeting_instance = meeting.MultiPersonMeeting(meeting_id, date, from_time, to_time, meeting_room, person_instance)
 
         #Add participants for this meeting
         for p in participants:
@@ -145,8 +138,8 @@ def insert_meeting(meeting_instance, is_multiple=False):
 
         #add support for meeting room later
         meeting_table = utilities.get_value("custom_meeting_table")
-        meeting_sql = " INSERT INTO " + meeting_table + " (id, date, from_time, to_time) " \
-                  " VALUES(?,?,?,?) "
+        meeting_sql = "INSERT INTO " + meeting_table + " (id, date, from_time, to_time) " \
+                  "VALUES(?,?,?,?)"
 
         
         if insert_new_record(meeting_sql, meeting_instance.get_tuple_representation_for_meeting()):
@@ -173,8 +166,8 @@ def insert_meeting_member(meeting_id, person_id):
     is_member_inserted = False
     try:
         meeting_member_table = utilities.get_value("custom_meeting_member_table")
-        meeting_member_sql = "INSERT INTO " + meeting_member_table + "(meeting_id, person_id)" \
-                  "VALUES(?,?) "
+        meeting_member_sql = "INSERT INTO " + meeting_member_table + "(meeting_id, person_id) " \
+                  "VALUES(?,?)"
         if insert_new_record(meeting_member_sql, (meeting_id, person_id)):
             custom_logger.logger.debug("Meeting Member added")
             is_member_inserted = True
@@ -215,18 +208,20 @@ def insert_room(meeting_id, room_number):
     meeting_room_inserted = False
     try:
         meeting_room_table = utilities.get_value("custom_meeting_room")
-        meeting_room_sql = "SELECT id FROM " + meeting_room_table + " where room_number=?";
+        meeting_room_sql = "SELECT id FROM " + meeting_room_table + " WHERE room_number=?";
         result = fetch_from_db(meeting_room_sql, (room_number,))
 
         if len(result) == 1:
             meeting_det_table = utilities.get_value("custom_meeting_details")
-            meeting_det_sql = "INSERT INTO " + meeting_det_table + "(id, room_id)" \
+            meeting_det_sql = "INSERT INTO " + meeting_det_table + "(id, room_id) " \
                             "VALUES(?,?)"
             if insert_new_record(meeting_det_sql, (meeting_id, result[0][0])):
                 custom_logger.logger.debug("Meeting Room Booked")
                 meeting_room_inserted = True
             else:
                 custom_logger.logger.error("Meeting Room not Booked")
+        else:
+            custom_logger.logger.error(f'No Meeting Room found with number {room_number}')
     except Exception as e:
         custom_logger.logger.error("Error occured when booking meeting room into Database:" + repr(e), exc_info=True)
     return meeting_room_inserted

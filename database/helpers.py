@@ -7,7 +7,7 @@ def fetch_from_db(sql_query: str, values: tuple):
     try:
         custom_logger.logger.debug("[Helper]Fetching for query:" + sql_query)
         custom_logger.logger.debug("[Helper]Values for query:" + str(values))
-        cur = db_instance.conn.cursor()
+        cur = get_cursor()
         if len(values) == 0:
             cur.execute(sql_query)
         else:
@@ -25,7 +25,7 @@ def insert_new_record(sql_query: str, values: tuple):
     record_inserted = False
     try:
         custom_logger.logger.debug("[Helper]Fetching for query:" + sql_query)
-        cur = db_instance.conn.cursor()
+        cur = get_cursor()
         if len(values) == 0:
             cur.execute(sql_query)
         else:
@@ -44,7 +44,7 @@ def insert_bulk_records(prepared_sql_query: str, values: list):
     records_inserted = False
     try:
         custom_logger.logger.debug("[Helper]Fetching for query:" + prepared_sql_query)
-        cur = db_instance.conn.cursor()
+        cur = get_cursor()
         for v in values:
             custom_logger.logger.debug("[Helper]Values for query:" + str(v))
             cur.execute(prepared_sql_query, v)
@@ -66,3 +66,6 @@ def commit_transactions():
     except Exception as e:
         custom_logger.logger.error("[Helper]Error occured during commit:" + repr(e), exc_info=True)
     return done
+
+def get_cursor():
+    return db_instance.conn.cursor()

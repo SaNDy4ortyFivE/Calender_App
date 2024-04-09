@@ -1,0 +1,277 @@
+2024-04-09 17:43:31,320 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 1)
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Generating new meeting id...
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Getting all meetings...
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT id FROM Meeting
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Values for query:()
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Total Meetings Fetched:0
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - New meeting id generated...
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - New meeting id 1
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Creating new person with id=1
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - New person with id=1 created
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Trying to insert new meeting...
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO Meeting (id, date, from_time, to_time) VALUES(?,?,?,?)
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Values for query:(1, '2024-04-09', '11:00', '12:00')
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Meeting inserted into Databse
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Trying to insert Members
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id) VALUES(?,?)
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Values for query:(1, 1)
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Meeting Member added
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Members added for Meeting into Database
+2024-04-09 17:43:31,352 - custom_logger - DEBUG - Committing...
+2024-04-09 17:43:31,452 - custom_logger - DEBUG - Commit done...
+2024-04-09 17:43:31,452 - custom_logger - DEBUG - Meeting scheduled successfully.
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Values for query:(2,)
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 2)
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Generating new meeting id...
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Getting all meetings...
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT id FROM Meeting
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Values for query:()
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Total Meetings Fetched:1
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - New meeting id generated...
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - New meeting id 2
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Creating new person with id=2
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - New person with id=2 created
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Trying to insert new meeting...
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO Meeting (id, date, from_time, to_time) VALUES(?,?,?,?)
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Values for query:(2, '2024-04-09', '11:00', '13:00')
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Meeting inserted into Databse
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Trying to insert Members
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id) VALUES(?,?)
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Values for query:(2, 2)
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Meeting Member added
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Members added for Meeting into Database
+2024-04-09 17:44:07,396 - custom_logger - DEBUG - Committing...
+2024-04-09 17:44:07,512 - custom_logger - DEBUG - Commit done...
+2024-04-09 17:44:07,512 - custom_logger - DEBUG - Meeting scheduled successfully.
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Values for query:(3,)
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 3)
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - Generating new meeting id...
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - Getting all meetings...
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT id FROM Meeting
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Values for query:()
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - Total Meetings Fetched:2
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - New meeting id generated...
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - New meeting id 3
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - Creating new person with id=3
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - New person with id=3 created
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - Trying to insert new meeting...
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO Meeting (id, date, from_time, to_time) VALUES(?,?,?,?)
+2024-04-09 17:44:19,124 - custom_logger - DEBUG - [Helper]Values for query:(3, '2024-04-09', '15:00', '17:00')
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - Meeting inserted into Databse
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - Trying to insert Members
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id) VALUES(?,?)
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - [Helper]Values for query:(3, 3)
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - Meeting Member added
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - Members added for Meeting into Database
+2024-04-09 17:44:19,140 - custom_logger - DEBUG - Committing...
+2024-04-09 17:44:19,240 - custom_logger - DEBUG - Commit done...
+2024-04-09 17:44:19,240 - custom_logger - DEBUG - Meeting scheduled successfully.
+2024-04-09 17:44:39,705 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:44:57,771 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - Received 2 participants...
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 1)
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - Checking for participant conflicts
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', '2')
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', '3')
+2024-04-09 17:45:11,257 - custom_logger - DEBUG - No conflicts found for participants...
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Generating new meeting id...
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Getting all meetings...
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT id FROM Meeting
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:()
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Total Meetings Fetched:3
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - New meeting id generated...
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - New meeting id 4
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Creating new person with id=1
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - New person with id=1 created
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Trying to insert new meeting...
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO Meeting (id, date, from_time, to_time) VALUES(?,?,?,?)
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:(4, '2024-04-09', '13:00', '14:00')
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Meeting inserted into Databse
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Trying to insert Members
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id) VALUES(?,?)
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:(4, 1)
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Meeting Member added
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Members added for Meeting into Database
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id)VALUES(?,?) 
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:(4, '2')
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:(4, '3')
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Records inserted into Database
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - Meeting Members added
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id FROM MeetingRoom WHERE room_number=?
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:('101',)
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingDetails(id, room_id) VALUES(?,?)
+2024-04-09 17:45:11,272 - custom_logger - DEBUG - [Helper]Values for query:(4, 1)
+2024-04-09 17:45:11,288 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 17:45:11,288 - custom_logger - DEBUG - Meeting Room Booked
+2024-04-09 17:45:11,288 - custom_logger - DEBUG - Committing...
+2024-04-09 17:45:11,388 - custom_logger - DEBUG - Commit done...
+2024-04-09 17:45:11,388 - custom_logger - DEBUG - Meeting scheduled successfully.
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 1)
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - Conflict Found for Person:1
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - Meeting 1:11:20-13:30
+2024-04-09 17:45:43,174 - custom_logger - DEBUG - Meeting 2:11:00-12:00
+2024-04-09 17:45:43,174 - custom_logger - ERROR - Conflict Found, not scheduling meeting
+2024-04-09 17:46:04,863 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - Received 2 participants...
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 2)
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - Conflict Found for Person:2
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - Meeting 1:13:30-14:30
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - Meeting 2:13:00-14:00
+2024-04-09 17:46:14,722 - custom_logger - DEBUG - Conflict Found, not scheduling meeting
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Received 2 participants...
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 2)
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Checking for participant conflicts
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', '1')
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', '3')
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Conflict Found for Person:3
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Meeting 1:16:30-17:00
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Meeting 2:15:00-17:00
+2024-04-09 17:47:05,899 - custom_logger - DEBUG - Conflict Found for Participants, not scheduling meeting
+2024-04-09 18:54:59,685 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 18:54:59,687 - custom_logger - DEBUG - Viewing schedule for Person ID: 1
+2024-04-09 18:54:59,688 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 18:54:59,688 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 18:54:59,690 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT MM.person_id, M.date, M.from_time, m.to_time FROM Meeting M  inner join MeetingMember MM  on M.id=MM.meeting_id  and MM.person_id=? order by M.date, M.from_time
+2024-04-09 18:54:59,690 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 18:54:59,694 - custom_logger - DEBUG - ---------
+2024-04-09 18:54:59,694 - custom_logger - DEBUG - Date:2024-04-09, from 11:00 to 12:00
+2024-04-09 18:54:59,694 - custom_logger - DEBUG - ---------
+2024-04-09 18:54:59,695 - custom_logger - DEBUG - Date:2024-04-09, from 13:00 to 14:00
+2024-04-09 18:54:59,696 - custom_logger - DEBUG - ---------
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 1)
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Generating new meeting id...
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Getting all meetings...
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT id FROM Meeting
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Values for query:()
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Total Meetings Fetched:0
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - New meeting id generated...
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - New meeting id 1
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Creating new person with id=1
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - New person with id=1 created
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Trying to insert new meeting...
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO Meeting (id, date, from_time, to_time) VALUES(?,?,?,?)
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Values for query:(1, '2024-04-09', '11:00', '12:00')
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Meeting inserted into Databse
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Trying to insert Members
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id) VALUES(?,?)
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Values for query:(1, 1)
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Meeting Member added
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Members added for Meeting into Database
+2024-04-09 19:08:49,768 - custom_logger - DEBUG - Committing...
+2024-04-09 19:08:49,862 - custom_logger - DEBUG - Commit done...
+2024-04-09 19:08:49,862 - custom_logger - DEBUG - Meeting scheduled successfully.
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Received 2 participants...
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', 1)
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - No conflicts found for organizer...
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Checking for participant conflicts
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', '2')
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Checking for conflicts
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id, date, from_time, to_time FROM Meeting  WHERE date=? AND id in ( SELECT meeting_id FROM MeetingMember where person_id=?)
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Values for query:('2024-04-09', '3')
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - No conflicts found for participants...
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Generating new meeting id...
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - Getting all meetings...
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT id FROM Meeting
+2024-04-09 19:08:59,353 - custom_logger - DEBUG - [Helper]Values for query:()
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Total Meetings Fetched:1
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - New meeting id generated...
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - New meeting id 2
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Creating new person with id=1
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - New person with id=1 created
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Trying to insert new meeting...
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO Meeting (id, date, from_time, to_time) VALUES(?,?,?,?)
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Values for query:(2, '2024-04-09', '13:00', '14:00')
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Meeting inserted into Databse
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Trying to insert Members
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id) VALUES(?,?)
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Values for query:(2, 1)
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Meeting Member added
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Members added for Meeting into Database
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingMember(meeting_id, person_id)VALUES(?,?) 
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Values for query:(2, '2')
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Values for query:(2, '3')
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Records inserted into Database
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Meeting Members added
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT id FROM MeetingRoom WHERE room_number=?
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Values for query:('101',)
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Fetching for query:INSERT INTO MeetingDetails(id, room_id) VALUES(?,?)
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Values for query:(2, 1)
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - [Helper]Record inserted into Database
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Meeting Room Booked
+2024-04-09 19:08:59,369 - custom_logger - DEBUG - Committing...
+2024-04-09 19:08:59,463 - custom_logger - DEBUG - Commit done...
+2024-04-09 19:08:59,463 - custom_logger - DEBUG - Meeting scheduled successfully.
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - --------------------------------------------------
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - Viewing schedule for Person ID: 1
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - [Helper]Fetching for query:SELECT * FROM Person WHERE id=?
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - [Helper]Fetching for query: SELECT MM.person_id, M.date, M.from_time, m.to_time FROM Meeting M  inner join MeetingMember MM  on M.id=MM.meeting_id  and MM.person_id=? order by M.date, M.from_time
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - [Helper]Values for query:(1,)
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - ---------
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - Date:2024-04-09, from 11:00 to 12:00
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - ---------
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - Date:2024-04-09, from 13:00 to 14:00
+2024-04-09 19:09:09,963 - custom_logger - DEBUG - ---------
